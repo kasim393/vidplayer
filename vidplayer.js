@@ -63,7 +63,7 @@ async function start_viewer() {
       sourceBuffer.addEventListener('updateend', handleUpdateEnd);
       VIDEO.addEventListener("pause", videoPause);
       VIDEO.addEventListener("play", videoPlay);
-      joinView(`ws://${NODE}/view`, build_token());
+      joinView(`wss://${NODE}/view`, build_token());
     }
   }
 }
