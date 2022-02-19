@@ -150,7 +150,7 @@ async function joinView(wsUrl, extraData) {
       //Pace the buffer, otherwise viewer falls behind
       if (globalThis.sourceBuffer.buffered.length >= 1) {
         var delta = VIDEO.buffered.end(0) - VIDEO.currentTime
-        console.log(delta)
+        //console.log(delta)
         if (delta <= 0.1) {
           VIDEO.playbackRate = 1
         } else if (delta >= 3) {
@@ -167,6 +167,7 @@ async function joinView(wsUrl, extraData) {
     } else {
       var json = JSON.parse(event.data)
       console.log(json)
+      postMessage(json, location.origin);
     }
   });
 }
