@@ -67,7 +67,6 @@ async function start_viewer() {
     }
   }
 }
-start_viewer()
 
 function handleUpdateEnd() {
   const queued_data = frame_queue.shift();
